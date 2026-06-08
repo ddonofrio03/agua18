@@ -101,23 +101,55 @@
     @media (max-width: 640px) { .locations { grid-template-columns: 1fr; } }
 
     /* Teams */
-    .teams { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .state {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 24px;
-      background: var(--tint);
-    }
-    .state h3 {
-      margin: 0 0 12px;
-      font-size: 16px;
-      letter-spacing: 0.04em;
+    .state-section { margin-bottom: 40px; }
+    .state-section:last-child { margin-bottom: 0; }
+    .state-section h3 {
+      margin: 0 0 20px;
+      font-size: 14px;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--accent-dark);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
     }
-    .state ul { margin: 0; padding-left: 18px; }
-    .state li { margin: 4px 0; color: var(--ink-soft); }
-    @media (max-width: 640px) { .teams { grid-template-columns: 1fr; } }
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 24px;
+    }
+    .tile { text-align: center; }
+    .tile .logo-wrap {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 3px rgba(15, 27, 45, 0.06);
+    }
+    .tile .logo-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .tile .name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 4px;
+      line-height: 1.3;
+    }
+    .tile .subs {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+      margin: 0;
+    }
 
     /* Contact form */
     form.contact {
@@ -231,61 +263,72 @@
     <section id="teams">
       <div class="wrap">
         <h2>Teams &amp; Organizations</h2>
-        <p class="intro">A sampling of the programs we proudly outfit.</p>
-        <div class="teams">
+        <p class="intro">The programs we proudly outfit across the Mid-Atlantic.</p>
 
-          <div class="state">
-            <h3>Maryland</h3>
-            <ul>
-              <li>BT Camps</li>
-              <li>Clearview Group</li>
-              <li>Franklin Pride</li>
-              <li>Ground Control Lax</li>
-              <li>Mount Carmel (all sports)</li>
-              <li>Penn State Alumni</li>
-              <li>Pikesville High</li>
-              <li>Putty Hill Baseball</li>
-              <li>South Carroll HS</li>
-              <li>Team Up for 1</li>
-              <li>Warhawks Football</li>
-              <li>Warriors Baseball</li>
-            </ul>
+        <div class="state-section">
+          <h3>Maryland</h3>
+          <div class="logo-grid">
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/bt-camps.png" alt="BT Camps" /></div><p class="name">BT Camps</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/clearview-group.png" alt="Clearview Group" /></div><p class="name">Clearview Group</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/franklin-pride.png" alt="Franklin Pride" /></div><p class="name">Franklin Pride</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/ground-control-lax.png" alt="Ground Control Lacrosse" /></div><p class="name">Ground Control Lax</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/mc-development.png" alt="MC Development" /></div><p class="name">MC Development</p></div>
+            <div class="tile">
+              <div class="logo-wrap"><img src="assets/logos/mount-carmel.png" alt="Mount Carmel Athletics" /></div>
+              <p class="name">Mount Carmel Athletics</p>
+              <p class="subs">Baseball &middot; Basketball &middot; Cheer &middot; Golf &middot; Lacrosse &middot; Soccer &middot; Softball &middot; Sports Medicine &middot; Volleyball &middot; Wrestling</p>
+            </div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/penn-state-alumni.png" alt="Penn State Alumni" /></div><p class="name">Penn State Alumni</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/pikesville-high.png" alt="Pikesville High" /></div><p class="name">Pikesville High</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/putty-hill-baseball.png" alt="Putty Hill Baseball" /></div><p class="name">Putty Hill Baseball</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/south-carroll-hs.png" alt="South Carroll HS" /></div><p class="name">South Carroll HS</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/team-up-for-1.png" alt="Team Up for 1" /></div><p class="name">Team Up for 1</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/warhawks-football.png" alt="Warhawks Football" /></div><p class="name">Warhawks Football</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/warriors-baseball.png" alt="Warriors Baseball" /></div><p class="name">Warriors Baseball</p></div>
           </div>
-
-          <div class="state">
-            <h3>Pennsylvania</h3>
-            <ul>
-              <li>Gamers</li>
-              <li>Little Flyers</li>
-            </ul>
-          </div>
-
-          <div class="state">
-            <h3>Delaware</h3>
-            <ul>
-              <li>Cape Crushers</li>
-              <li>Delaware Storm</li>
-              <li>Indian River (all sports &amp; clubs)</li>
-              <li>Sussex Central Golden Knights (all sports &amp; clubs)</li>
-            </ul>
-          </div>
-
-          <div class="state">
-            <h3>New Jersey</h3>
-            <ul>
-              <li>Wildwood</li>
-            </ul>
-          </div>
-
-          <div class="state">
-            <h3>New York</h3>
-            <ul>
-              <li>Camp Scatico</li>
-              <li>NY Prospects</li>
-            </ul>
-          </div>
-
         </div>
+
+        <div class="state-section">
+          <h3>Pennsylvania</h3>
+          <div class="logo-grid">
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/gamers.png" alt="Gamers" /></div><p class="name">Gamers</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/little-flyers.png" alt="Little Flyers" /></div><p class="name">Little Flyers</p></div>
+          </div>
+        </div>
+
+        <div class="state-section">
+          <h3>Delaware</h3>
+          <div class="logo-grid">
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/cape-crushers.png" alt="Cape Crushers" /></div><p class="name">Cape Crushers</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/delaware-storm.png" alt="Delaware Storm" /></div><p class="name">Delaware Storm</p></div>
+            <div class="tile">
+              <div class="logo-wrap"><img src="assets/logos/indian-river.png" alt="Indian River" /></div>
+              <p class="name">Indian River</p>
+              <p class="subs">Athletics &middot; Band &middot; Baseball &middot; Basketball &middot; BPA &middot; Cheer &middot; Cross Country &middot; Drama &middot; FFA &middot; Field Hockey &middot; FLAG &middot; Football &middot; Golf &middot; Indians &middot; Lacrosse &middot; Soccer &middot; Softball &middot; Swimming &middot; Tennis &middot; Track &amp; Field &middot; TSA &middot; Volleyball &middot; Wrestling</p>
+            </div>
+            <div class="tile">
+              <div class="logo-wrap"><img src="assets/logos/sussex-central.png" alt="Sussex Central Golden Knights" /></div>
+              <p class="name">Sussex Central Golden Knights</p>
+              <p class="subs">Athletics &middot; Band &middot; Baseball &middot; Basketball &middot; BPA &middot; Cheer &middot; Cross Country &middot; Drama &middot; FFA &middot; Field Hockey &middot; FLAG &middot; Football &middot; Golf &middot; Lacrosse &middot; Soccer &middot; Softball &middot; Swimming &middot; Tennis &middot; Track &amp; Field &middot; TSA &middot; Volleyball &middot; Wrestling</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="state-section">
+          <h3>New Jersey</h3>
+          <div class="logo-grid">
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/wildwood.png" alt="Wildwood" /></div><p class="name">Wildwood</p></div>
+          </div>
+        </div>
+
+        <div class="state-section">
+          <h3>New York</h3>
+          <div class="logo-grid">
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/camp-scatico.png" alt="Camp Scatico" /></div><p class="name">Camp Scatico</p></div>
+            <div class="tile"><div class="logo-wrap"><img src="assets/logos/ny-prospects.png" alt="NY Prospects" /></div><p class="name">NY Prospects</p></div>
+          </div>
+        </div>
+
       </div>
     </section>
 
