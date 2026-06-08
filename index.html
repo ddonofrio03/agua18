@@ -1,1 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AGUA18 — Team Sports & Custom Apparel</title>
+  <meta name="description" content="AGUA18 — team sports apparel and custom gear for schools, clubs, and organizations across the Mid-Atlantic." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <style>
+    :root {
+      --ink: #0f1b2d;
+      --ink-soft: #2a3a55;
+      --muted: #5a6b85;
+      --paper: #ffffff;
+      --tint: #f4f7fb;
+      --line: #e2e8f0;
+      --accent: #0f7fb8;
+      --accent-dark: #0a5e8a;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-dark); text-decoration: underline; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
+    /* Header */
+    header.site {
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+      position: sticky; top: 0; z-index: 10;
+    }
+    header.site .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 16px; padding-bottom: 16px;
+    }
+    header.site img { height: 40px; width: auto; display: block; }
+    nav.site a {
+      color: var(--ink-soft);
+      margin-left: 22px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+    nav.site a:hover { color: var(--accent); text-decoration: none; }
+
+    /* Hero */
+    .hero {
+      padding: 80px 0 60px;
+      background: linear-gradient(180deg, var(--tint) 0%, var(--paper) 100%);
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 16px;
+      letter-spacing: -0.02em;
+    }
+    .hero p.lead {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    .cta {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .cta:hover { background: var(--accent-dark); color: white; text-decoration: none; }
+
+    /* Sections */
+    section { padding: 64px 0; border-top: 1px solid var(--line); }
+    section h2 {
+      font-size: 28px;
+      margin: 0 0 12px;
+      letter-spacing: -0.01em;
+    }
+    section .intro { color: var(--muted); margin: 0 0 32px; max-width: 720px; }
+
+    /* Locations */
+    .locations { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .loc-card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 24px;
+      background: var(--paper);
+    }
+    .loc-card h3 { margin: 0 0 8px; font-size: 18px; }
+    .loc-card .addr { color: var(--ink-soft); font-style: normal; margin: 0 0 12px; }
+    .loc-card .note { color: var(--muted); font-size: 14px; margin: 0; }
+    @media (max-width: 640px) { .locations { grid-template-columns: 1fr; } }
+
+    /* Teams */
+    .teams { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .state {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 24px;
+      background: var(--tint);
+    }
+    .state h3 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+    }
+    .state ul { margin: 0; padding-left: 18px; }
+    .state li { margin: 4px 0; color: var(--ink-soft); }
+    @media (max-width: 640px) { .teams { grid-template-columns: 1fr; } }
+
+    /* Contact form */
+    form.contact {
+      display: grid;
+      gap: 14px;
+      max-width: 560px;
+    }
+    form.contact label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      margin-bottom: 4px;
+    }
+    form.contact input,
+    form.contact textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font: inherit;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    form.contact input:focus,
+    form.contact textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(15, 127, 184, 0.15);
+    }
+    form.contact textarea { min-height: 130px; resize: vertical; }
+    form.contact button {
+      justify-self: start;
+      background: var(--accent);
+      color: white;
+      border: 0;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    form.contact button:hover { background: var(--accent-dark); }
+
+    /* Footer */
+    footer.site {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap">
+      <a href="#top" aria-label="AGUA18 home"><img src="assets/logo.png" alt="AGUA18" /></a>
+      <nav class="site">
+        <a href="#about">About</a>
+        <a href="#locations">Locations</a>
+        <a href="#teams">Teams</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" style="border-top: 0;">
+      <div class="wrap">
+        <h1>Team sports apparel,<br />built for your program.</h1>
+        <p class="lead">AGUA18 partners with schools, clubs, and youth organizations across the Mid-Atlantic to deliver custom team apparel and spirit wear.</p>
+        <a class="cta" href="#contact">Get in touch</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <h2>About AGUA18</h2>
+        <p class="intro">We work directly with athletic directors, coaches, and booster organizations to design and source apparel for their teams &mdash; from custom uniforms to game-day spirit wear. Programs across Maryland, Pennsylvania, Delaware, New Jersey, and New York trust AGUA18 to outfit their athletes.</p>
+      </div>
+    </section>
+
+    <section id="locations">
+      <div class="wrap">
+        <h2>Locations</h2>
+        <p class="intro">Two locations serving the Mid-Atlantic.</p>
+        <div class="locations">
+          <div class="loc-card">
+            <h3>Baltimore, MD</h3>
+            <address class="addr">
+              2002 Thistlewood Rd<br />
+              Baltimore, MD 21209
+            </address>
+            <p class="note"><a href="https://www.google.com/maps/search/?api=1&query=2002+Thistlewood+Rd+Baltimore+MD+21209" target="_blank" rel="noopener">Open in Google Maps</a></p>
+          </div>
+          <div class="loc-card">
+            <h3>York, PA</h3>
+            <address class="addr">
+              1285 West King St<br />
+              York, PA 17404
+            </address>
+            <p class="note">In partnership with Elephat Printing &amp; Design. <a href="https://www.google.com/maps/search/?api=1&query=1285+West+King+St+York+PA+17404" target="_blank" rel="noopener">Open in Google Maps</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="teams">
+      <div class="wrap">
+        <h2>Teams &amp; Organizations</h2>
+        <p class="intro">A sampling of the programs we proudly outfit.</p>
+        <div class="teams">
+
+          <div class="state">
+            <h3>Maryland</h3>
+            <ul>
+              <li>BT Camps</li>
+              <li>Clearview Group</li>
+              <li>Franklin Pride</li>
+              <li>Ground Control Lax</li>
+              <li>Mount Carmel (all sports)</li>
+              <li>Penn State Alumni</li>
+              <li>Pikesville High</li>
+              <li>Putty Hill Baseball</li>
+              <li>South Carroll HS</li>
+              <li>Team Up for 1</li>
+              <li>Warhawks Football</li>
+              <li>Warriors Baseball</li>
+            </ul>
+          </div>
+
+          <div class="state">
+            <h3>Pennsylvania</h3>
+            <ul>
+              <li>Gamers</li>
+              <li>Little Flyers</li>
+            </ul>
+          </div>
+
+          <div class="state">
+            <h3>Delaware</h3>
+            <ul>
+              <li>Cape Crushers</li>
+              <li>Delaware Storm</li>
+              <li>Indian River (all sports &amp; clubs)</li>
+              <li>Sussex Central Golden Knights (all sports &amp; clubs)</li>
+            </ul>
+          </div>
+
+          <div class="state">
+            <h3>New Jersey</h3>
+            <ul>
+              <li>Wildwood</li>
+            </ul>
+          </div>
+
+          <div class="state">
+            <h3>New York</h3>
+            <ul>
+              <li>Camp Scatico</li>
+              <li>NY Prospects</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p class="intro">Tell us about your program and we&rsquo;ll get back to you.</p>
+        <!-- Replace YOUR_FORM_ID with your Formspree form id (see README) -->
+        <form class="contact" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" />
+          </div>
+          <div>
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      &copy; <span id="yr"></span> AGUA18. All rights reserved.
+    </div>
+  </footer>
+
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
